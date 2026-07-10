@@ -1,3 +1,8 @@
+# Requirements
+
+- nginx
+- jq
+
 # 1. Setup env
 
 write to `.env` file:
