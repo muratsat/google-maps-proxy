@@ -9,7 +9,7 @@ GMAPS_API_KEY=abc123
 # 2. Setup crontab
 
 ```
-0 0 * * 0 <cloned-location>/update-session-token.sh /etc/nginx/conf.d/gmaps_secrets.conf && systemctl reload nginx
+0 0 * * 0 <cloned-location>/update-session-token.sh /etc/nginx/sites-available/gmaps_secrets.conf && systemctl reload nginx
 ```
 
 # 3. add nginx config for google maps proxy:
@@ -22,7 +22,7 @@ server {
     # Values defined in gmaps_secrets.conf:
     #   set $gmaps_api_key "abc123";
     #   set $gmaps_session "xyz789";
-    include /etc/nginx/conf.d/gmaps_secrets.conf;
+    include /etc/nginx/sites-available/gmaps_secrets.conf;
 
     resolver 8.8.8.8 valid=300s;
     resolver_timeout 10s;
